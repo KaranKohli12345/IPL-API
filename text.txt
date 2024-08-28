@@ -1,0 +1,29 @@
+# API Development using Flask
+
+# What is API?
+# API: Application Programming Interface
+# beech wala banda
+# Broker
+# API acts as a Data Pipeline b/w two softwares
+# API is a function stored at a server which has a url which can be given an input and based on that, an output is generated in format of JSON a universal Data format through which any software (written in any Programming language) can interact.
+
+# Normal url pe hit karne par HTML page (Website) dikhega
+# API ke url pe hit karne par JSON dikhega 
+
+
+# Today's project
+
+# APIs we'll make today
+# 1. teams -> returns every team that has ever played an ipl match.
+# 2. players -> returns every player who have played at least one match in ipl.
+# 3. teamVsTeam -> record of matches played b/w two teams.
+# 4. team-record -> entire track record of team and against every team.
+# 5. batsman-record -> overall record of player and against each team of player.
+# 6. bowler-record -> overall record of player and against each team of player.
+
+add more APIs...
+
+# deploy all APIs
+
+
+
