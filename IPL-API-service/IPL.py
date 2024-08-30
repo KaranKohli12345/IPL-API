@@ -53,5 +53,23 @@ def team_record(team):
     return team_record
 
 
+def players_list():
+    # Extract player lists from Team1Players and Team2Players columns, removing brackets and splitting by commas
+    team1_players = matches['Team1Players'].apply(lambda x: eval(x) if isinstance(x, str) else [])
+    team2_players = matches['Team2Players'].apply(lambda x: eval(x) if isinstance(x, str) else [])
 
+    # Combine all players from both teams into one list
+    all_players = set()
+    for players in team1_players:
+        all_players.update(players)
+
+    for players in team2_players:
+        all_players.update(players)
+
+    # Convert the set of unique players to a sorted list
+    unique_players_list = list(sorted(all_players))
+
+    return {
+        'Players': unique_players_list
+        }
 

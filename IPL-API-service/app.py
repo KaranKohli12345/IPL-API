@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request
 import IPL
-from jugaad import teamAPI, batsmanAPI, bowlerAPI
+import jugaad
 
 app = Flask(__name__)
 
@@ -26,25 +26,27 @@ def teamVsTeam():
 @app.route('/api/team-record')
 def team_record():
     team = request.args.get('team')
-    response = teamAPI(team)
+    response = jugaad.teamAPI(team)
     return response
 
 # API # 4
 @app.route('/api/batter-record')
 def batter_record():
     batsman = request.args.get('batsman')
-    response = batsmanAPI(batsman)
+    response = jugaad.batsmanAPI(batsman)
     return response
 
 # API # 5
 @app.route('/api/bowler-record')
 def bowler_record():
     bowler = request.args.get('bowler')
-    response = bowlerAPI(bowler)
+    response = jugaad.bowlerAPI(bowler)
     return response
 
 # API # 6
-# @app.route('')
-# def team
+@app.route('/api/players')
+def players_API():
+    players = IPL.players_list()
+    return jsonify(players)
 
 app.run(debug=True)
